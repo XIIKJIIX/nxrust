@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/my_rust_app/src",
+  "trackDeps": true,
   "targets": {
     "build": {
       "executor": "@monodon/rust:build",
