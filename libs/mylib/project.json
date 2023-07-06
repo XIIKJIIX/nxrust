@@ -40,6 +40,12 @@
       "options": {
         "target-dir": "dist/target/mylib"
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
     }
   },
   "tags": []
