@@ -2,6 +2,7 @@
 [workspace]
 members = [
 	'apps/my_rust_app',
+  'apps/justapp',
 	'libs/mylib',
 ]
 
