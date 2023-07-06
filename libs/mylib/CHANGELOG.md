@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/XIIKJIIX/nxrust/compare/mylib-0.4.0...mylib-0.5.0) (2023-07-06)
+
+
+### Features
+
+* **mylib:** add test ([1da0576](https://github.com/XIIKJIIX/nxrust/commit/1da05766dc59da33c23d532560888cf6ac40c434))
+
 ## [0.4.0](https://github.com/XIIKJIIX/nxrust/compare/mylib-0.3.0...mylib-0.4.0) (2023-07-06)
 
 
