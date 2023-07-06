@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/XIIKJIIX/nxrust/compare/mylib-0.2.0...mylib-0.3.0) (2023-07-06)
+
+
+### Features
+
+* **mylib:** add multiply func ([1141f7d](https://github.com/XIIKJIIX/nxrust/commit/1141f7dbbf043fe60f8daa8b85cb4fc0fb42bba6))
+
 ## [0.2.0](https://github.com/XIIKJIIX/nxrust/compare/mylib-0.1.0...mylib-0.2.0) (2023-07-06)
 
 
