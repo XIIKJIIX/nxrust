@@ -1,5 +1,9 @@
+
 [workspace]
-members = []
+members = [
+	'apps/my_rust_app',
+	'libs/mylib',
+]
 
 [profile.release]
 lto = true
