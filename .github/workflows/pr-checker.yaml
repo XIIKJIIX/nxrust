@@ -40,4 +40,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@stable
-      - run: npx nx run ${{ matrix.project }}:test
+      - run: cargo test -p ${{ matrix.project }}
