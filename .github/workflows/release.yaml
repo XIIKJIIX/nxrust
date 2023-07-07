@@ -24,8 +24,3 @@ jobs:
         run: npx nx affected --target version --push --base=HEAD~ --skipCommit --trackDeps --parallel=false --skipCommitTypes=docs,ci,test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Tag latest-release
-        shell: bash
-        run: |
-          git tag -f last-release
-          git push origin latest-release --force
