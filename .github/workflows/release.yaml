@@ -21,7 +21,7 @@ jobs:
       - run: npm ci
       - name: Version
         shell: bash
-        # nx affected --target version --push --base=HEAD~ --skipCommit --trackDeps --parallel=false
+        # nx affected --target version --push --base=HEAD~ --skipCommit --trackDeps --parallel=false --skipCommitTypes=docs,ci,test
         run: npx nx affected --base=latest-release --target=version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
