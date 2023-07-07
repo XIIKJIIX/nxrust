@@ -22,6 +22,10 @@ pub mod inner {
     pub fn divide3(a: i32, b: i32) -> i32 {
         a / b
     }
+
+    pub fn divide4(a: i32, b: i32) -> i32 {
+        a / b
+    }
 }
 
 #[cfg(test)]

@@ -1,0 +1,43 @@
+name: pr-checker
+
+on:
+  - pull_request
+
+jobs:
+  generate-matrix:
+    name: Generate Job Matrix
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      nxBase: ${{ steps.nx-sha.outputs.base }}
+      nxHead: ${{ steps.nx-sha.outputs.head }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm ci
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        id: nx-sha
+        uses: nrwl/nx-set-shas@v3
+      - run: echo "matrix=$(npx nx show projects --affected --json | tr -d '\n')" >> "$GITHUB_OUTPUT"
+        id: set-matrix
+
+  test:
+    name: Test ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    if: needs.generate-matrix.outputs.matrix != ''
+    needs: [generate-matrix]
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        project: ${{fromJSON(needs.generate-matrix.outputs.matrix)}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo test -p ${{ matrix.project }}
