@@ -23,20 +23,21 @@ jobs:
       - run: npm ci
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         id: nx-sha
-        uses: nrwl/nx-set-shas@v2
+        uses: nrwl/nx-set-shas@v3
       - run: echo "matrix=$(npx nx show projects --affected --json | tr -d '\n')" >> "$GITHUB_OUTPUT"
         id: set-matrix
 
   test:
-    name: Test ${{ matrix.nickname }}
+    name: Test ${{ matrix.project }}
     runs-on: ubuntu-latest
     if: needs.generate-matrix.outputs.matrix != ''
     needs: [generate-matrix]
     strategy:
       fail-fast: false
       max-parallel: 3
-      matrix: ${{fromJSON(needs.generate-matrix.outputs.matrix)}}
+      matrix:
+        project: ${{fromJSON(needs.generate-matrix.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@stable
-      - run: npx nx run ${{ matrix.package }}:test
+      - run: npx nx run ${{ matrix.project }}:test
