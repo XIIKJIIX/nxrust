@@ -24,7 +24,7 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         id: nx-sha
         uses: nrwl/nx-set-shas@v2
-      - run: echo "matrix=$(npx nx show projects --affected --json)" >> "$GITHUB_OUTPUT"
+      - run: echo "matrix=$(npx nx show projects --affected --json | tr -d '\n')" >> "$GITHUB_OUTPUT"
         id: set-matrix
 
   test:
