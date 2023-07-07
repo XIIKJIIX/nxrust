@@ -45,7 +45,8 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "postTargets": ["mylib:github"]
+        "postTargets": ["mylib:github"],
+        "trackDeps": true
       }
     },
     "github": {
