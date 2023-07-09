@@ -1,6 +1,7 @@
 name: release
 
 permissions: write-all
+concurrency: release
 
 on:
   push:
@@ -25,7 +26,7 @@ jobs:
       - run: npm ci
       - name: Version
         shell: bash
-        run: npx nx affected --target version --push --base=last-release --skipCommit --trackDeps --parallel=false --skipCommitTypes=docs,ci,test
+        run: npx nx affected --target version --push --base=last-release --trackDeps --parallel=false --skipCommitTypes=docs,ci,test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Tag last-release
