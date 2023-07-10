@@ -3,7 +3,7 @@ name: on-tag-pushed
 on:
   push:
     tags:
-      - '**-**'
+      - '*'
       - '!last-release'
 
 jobs:
