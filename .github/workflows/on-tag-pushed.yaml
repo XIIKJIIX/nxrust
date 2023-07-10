@@ -2,9 +2,8 @@ name: on-tag-pushed
 
 on:
   push:
-    tags:
-      - '*'
-      - '!last-release'
+    tags-ignore:
+      - 'last-release'
 
 jobs:
   build-image:
