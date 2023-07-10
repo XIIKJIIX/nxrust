@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/XIIKJIIX/nxrust/compare/my_rust_app-0.2.0...my_rust_app-0.3.0) (2023-07-10)
+
+### Dependency Updates
+
+* `mylib` updated to version `0.11.0`
+
+### Features
+
+* add more println ([3de4b39](https://github.com/XIIKJIIX/nxrust/commit/3de4b399f83f7ac96f36e073547d2f2b9c27a539))
+
 ## [0.2.0](https://github.com/XIIKJIIX/nxrust/compare/my_rust_app-0.1.4...my_rust_app-0.2.0) (2023-07-10)
 
 
