@@ -26,6 +26,7 @@ jobs:
       - run: npm ci
       - name: Version
         shell: bash
+        # Pushes a new commits to repo with the version bumpm this won't trigger a Github Action
         run: npx nx affected --target version --push --base=last-release --trackDeps --parallel=false --skipCommitTypes=docs,ci,test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
