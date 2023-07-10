@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.0](https://github.com/XIIKJIIX/nxrust/compare/mylib-0.10.0...mylib-0.11.0) (2023-07-10)
+
+
+### Features
+
+* add divided7 ([a3f80d1](https://github.com/XIIKJIIX/nxrust/commit/a3f80d1617ed3526a248ab08ae3901beb5219c14))
+
 ## [0.10.0](https://github.com/XIIKJIIX/nxrust/compare/mylib-0.9.0...mylib-0.10.0) (2023-07-09)
 
 
